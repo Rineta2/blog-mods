@@ -1,18 +1,14 @@
 import React, { ReactNode } from "react";
-
 import { Fragment } from "react";
-
-import "@/components/sass/Globals.scss"
-
 import { Raleway as RalewayFont } from "next/font/google";
+import dynamic from "next/dynamic";
+import Head from "@/app/Head";
+import Script from "next/script";
+
+// Import global styles
+import "@/components/sass/Globals.scss";
 
 const Raleway = RalewayFont({ subsets: ["latin"] });
-
-import dynamic from "next/dynamic";
-
-import Head from "@/app/Head";
-
-import Script from "next/script";
 
 const Footer = dynamic(() => import("@/components/layout/Footer"), {
   ssr: false,
@@ -26,6 +22,14 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
   return (
     <html lang="en">
       <body className={Raleway.className}>
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-NDFTW435"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }} // Use object format for style attribute
+          ></iframe>
+        </noscript>
         <Fragment>
           <main>
             <Head />
