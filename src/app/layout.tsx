@@ -46,22 +46,13 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
         <meta name="description" content={metadata.description} />
         <meta name="author" content={metadata.author} />
         <meta name="keywords" content={metadata.keywords} />
-        <meta name="google-site-verification" content="PPFLRECsv286Qh9u6AsO2sLWattnKN-Z2BsNEMKprsk" />
+        <meta name="google-site-verification" content="google5f7447e6164a9762.html" />
         <link rel="canonical" href={canonicalUrl} />
         <link rel="icon" href={faviconUrl} />
         <link rel="apple-touch-icon" href={faviconUrl} />
         <link rel="shortcut icon" href={faviconUrl} type="image/x-icon" />
       </Head>
       <body className={Raleway.className}>
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-NCNDNQ2R"
-            height="0"
-            width="0"
-            style={{ display: "none", visibility: "hidden" }}
-          ></iframe>
-        </noscript>
-
         <Fragment>
           <main>
             {children}
