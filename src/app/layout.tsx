@@ -12,10 +12,6 @@ const Raleway = RalewayFont({ subsets: ["latin"] });
 
 import dynamic from "next/dynamic";
 
-const Header = dynamic(() => import("@/components/layout/Header"), {
-  ssr: false,
-});
-
 const Footer = dynamic(() => import("@/components/layout/Footer"), {
   ssr: false,
 });
@@ -34,6 +30,8 @@ export default function RootLayout({
     <html lang="en">
       <Head>
         <meta name="google-site-verification" content="PPFLRECsv286Qh9u6AsO2sLWattnKN-Z2BsNEMKprsk" />
+        <meta name="author" content="rizki" />
+        <meta name="keywords" content="Aplikasi Mods, Software, Windows, Game PC, Game Mobile, Microsoft Office, Software, Game PC, Game Mobile, Microsoft Office" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
