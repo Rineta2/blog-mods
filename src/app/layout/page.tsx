@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 import { dataPage, headAside, dataAside, tutorial } from "@/components/data/data"
 
@@ -18,12 +18,35 @@ const Layout = () => {
 
   const handleFilter = (category: string) => {
     setSelectedCategory(category);
+    setVisibleItems(5);
+    setLoadedItems([]);
+  };
+
+  const handleLoadMore = () => {
+    const newVisibleItems = visibleItems + 5;
+    const newLoadedItems = dataPage.slice(visibleItems, newVisibleItems).map((data) => data.id);
+
+    setVisibleItems(newVisibleItems);
+    setLoadedItems(newLoadedItems);
+
+    setTimeout(() => {
+      setLoadedItems([]);
+    }, 500);
   };
 
   const filteredData =
     selectedCategory === "all-categories"
       ? dataPage
-      : dataPage.filter((id) => id.category === selectedCategory);
+      : dataPage.filter((data) => data.category === selectedCategory);
+
+  useEffect(() => {
+    const initialLoadedItems = filteredData.slice(0, visibleItems).map((data) => data.id);
+    setLoadedItems(initialLoadedItems);
+
+    setTimeout(() => {
+      setLoadedItems([]);
+    }, 500);
+  }, [visibleItems, filteredData]);
 
   return (
     <section className="layout">
@@ -31,9 +54,10 @@ const Layout = () => {
         <article>
           <div className="content">
             {
-              filteredData.map((data) => {
+              filteredData.slice(0, visibleItems).map((data) => {
+                const isVisible = loadedItems.includes(data.id);
                 return (
-                  <div className="box" key={data.id}>
+                  <div className={`box ${isVisible ? "visible" : ""}`} key={data.id}>
                     <Image src={data.img} alt={data.title} quality={100} />
 
                     <div className="profile">
@@ -56,9 +80,11 @@ const Layout = () => {
             }
           </div>
 
-          <div className="btn">
-            <button>Load More</button>
-          </div>
+          {visibleItems < filteredData.length && (
+            <div className="btn">
+              <button onClick={handleLoadMore}>Load More</button>
+            </div>
+          )}
         </article>
 
         <aside>
