@@ -4,6 +4,8 @@ import "@/components/sass/Globals.scss"
 
 import { Raleway as RalewayFont } from "next/font/google";
 
+import Head from "next/head";
+
 const Raleway = RalewayFont({ subsets: ["latin"] });
 
 import dynamic from "next/dynamic";
@@ -28,6 +30,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <Head>
+        <meta name="google-site-verification" content="PPFLRECsv286Qh9u6AsO2sLWattnKN-Z2BsNEMKprsk" />
+      </Head>
       <body className={Raleway.className}>
         <main>
           {children}

@@ -2,6 +2,8 @@
   "name": "blog-mods",
   "version": "0.1.0",
   "private": true,
+  "author": "Blogs Mods",
+  "homepage": "https://aplikasi-mod.vercel.app/",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
