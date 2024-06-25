@@ -47,7 +47,7 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
         <meta name="description" content={metadata.description} />
         <meta name="author" content={metadata.author} />
         <meta name="keywords" content={metadata.keywords} />
-        <meta name="verification" content={metadata.verification} />
+        <meta name="google-site-verification" content={metadata.verification} />
         <link rel="canonical" href={canonicalUrl} />
         <link rel="icon" href={faviconUrl} />
         <link rel="apple-touch-icon" href={faviconUrl} />
