@@ -21,7 +21,6 @@ export const metadata = {
   author: "rizki",
   keywords:
     "Aplikasi Mods,Mods, Software, Windows, Game PC, Game Mobile, Microsoft Office, Software, Game PC, Game Mobile, Microsoft Office",
-  verification: "PPFLRECsv286Qh9u6AsO2sLWattnKN-Z2BsNEMKprsk",
 };
 
 const siteUrl = "https://aplikasi-mod.vercel.app/";
@@ -47,7 +46,7 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
         <meta name="description" content={metadata.description} />
         <meta name="author" content={metadata.author} />
         <meta name="keywords" content={metadata.keywords} />
-        <meta name="google-site-verification" content={metadata.verification} />
+        <meta name="google-site-verification" content="PPFLRECsv286Qh9u6AsO2sLWattnKN-Z2BsNEMKprsk" />
         <link rel="canonical" href={canonicalUrl} />
         <link rel="icon" href={faviconUrl} />
         <link rel="apple-touch-icon" href={faviconUrl} />
