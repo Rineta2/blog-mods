@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 
-import { dataPage, headAside, dataAside, tutorial } from "@/components/data/data"
+import { dataPage, headAside, tutorial } from "@/components/data/data"
 
 import "@/components/sass/Home.scss"
 
@@ -12,15 +12,8 @@ import Link from "next/link"
 
 const Layout = () => {
 
-  const [selectedCategory, setSelectedCategory] = useState("all-categories");
   const [visibleItems, setVisibleItems] = useState(5);
   const [loadedItems, setLoadedItems] = useState<number[]>([]);
-
-  const handleFilter = (category: string) => {
-    setSelectedCategory(category);
-    setVisibleItems(5);
-    setLoadedItems([]);
-  };
 
   const handleLoadMore = () => {
     const newVisibleItems = visibleItems + 5;
@@ -34,10 +27,7 @@ const Layout = () => {
     }, 500);
   };
 
-  const filteredData =
-    selectedCategory === "all-categories"
-      ? dataPage
-      : dataPage.filter((data) => data.category === selectedCategory);
+  const filteredData = dataPage;
 
   useEffect(() => {
     const initialLoadedItems = filteredData.slice(0, visibleItems).map((data) => data.id);
@@ -71,7 +61,7 @@ const Layout = () => {
                     </div>
 
                     <div className="btn">
-                      <Link href={`/[slug]`} as={`/layout/${data.slug}`}>Lihat Details</Link>
+                      <Link href={`/[category]/[slug]`} as={`/layout/${data.category}/${data.slug}`}>Lihat Details</Link>
                     </div>
 
                   </div>
@@ -100,10 +90,12 @@ const Layout = () => {
 
           <ul className="content">
             {
-              dataAside.map((data) => {
+              dataPage.map((data) => {
                 return (
-                  <li key={data.id} className={data.category === selectedCategory ? "active" : "all-categories"} onClick={() => handleFilter(data.category)}>
-                    <h3>{data.name}</h3>
+                  <li key={data.id}>
+                    <Link href={`/[category]`} as={`/layout/${data.category}`}>
+                      <span>{data.category}</span>
+                    </Link>
                   </li>
                 )
               })

@@ -243,14 +243,18 @@
             color: $primary-c;
           }
 
-          &.active {
-            color: $primary-c;
-            transition: all 0.3s ease-in-out;
-          }
+          a {
+            span {
+              font-size: 1rem;
+              letter-spacing: 1px;
+              color: $title-c;
+              text-transform: capitalize;
+            }
 
-          h3 {
-            font-size: 1rem;
-            letter-spacing: 1px;
+            &.active {
+              color: $primary-c;
+              transition: all 0.3s ease-in-out;
+            }
           }
         }
       }
