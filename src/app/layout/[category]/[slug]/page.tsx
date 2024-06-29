@@ -105,18 +105,19 @@ const detailsLayout = ({ params }: { params: { slug: string } }) => {
 
                     <h1 className="title__version">{image.version}</h1>
                     <h3 className="title__size">{image.size}</h3>
-                    <div className="btn">
-                      {
-                        image.download.map((download) => {
-                          return (
-                            <Link key={download.id} href={download.path}>
-                              <span className="name">{download.name}</span> |
-                              <span className="title">{download.title}</span>
-                            </Link>
-                          )
-                        })
-                      }
-                    </div>
+                  </div>
+                )
+              })
+            }
+
+            {
+              slug.download?.map((download) => {
+                return (
+                  <div className="btn" key={download.id}>
+                    <Link key={download.id} href={download.path} as={download.path}>
+                      <span className="name">{download.name}</span> |
+                      <span className="title">{download.title}</span>
+                    </Link>
                   </div>
                 )
               })

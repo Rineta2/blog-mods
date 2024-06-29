@@ -211,204 +211,278 @@
 
 .category {
   .category__container {
-    padding: 1rem 5%;
-    display: flex;
-    justify-content: space-between;
-    gap: 2rem;
+    .content {
+      display: flex;
+      justify-content: space-between;
+      gap: 2rem;
 
-    // article {
-    //   width: 70%;
-    //   display: flex;
-    //   flex-direction: column;
-
-    //   .content {
-    //     display: grid;
-    //     grid-template-columns: repeat(1, 1fr);
-    //     row-gap: 2rem;
-    //     place-items: center;
-
-    //     .box {
-    //       width: 100%;
-    //       height: auto;
-    //       background-color: transparent;
-    //       backdrop-filter: blur(10px);
-    //       border: 1px solid $title-c;
-    //       border-radius: 24px;
-    //       padding: 1rem;
-    //       transform: perspective(1000px) translateZ(0);
-    //       transition: all 0.3s ease-in-out;
-
-    //       &.visible {
-    //         transform: perspective(1000px) translateZ(20px);
-    //       }
-
-    //       img {
-    //         width: 100%;
-    //         height: auto;
-    //         object-fit: cover;
-    //         border-radius: 24px;
-    //         margin-bottom: 1rem;
-    //       }
-
-    //       .profile {
-    //         display: flex;
-    //         justify-content: space-between;
-    //         align-items: center;
-    //         margin-bottom: 2rem;
-
-    //         span {
-    //           font-size: 1rem;
-    //           letter-spacing: 1px;
-    //         }
-    //       }
-
-    //       .text {
-    //         h1 {
-    //           font-size: $med-fs;
-    //           margin-bottom: 1rem;
-    //           letter-spacing: 1px;
-    //         }
-
-    //         p {
-    //           font-size: 1rem;
-    //           line-height: 1.5;
-    //           margin-bottom: 1rem;
-    //         }
-    //       }
-
-    //       .btn {
-    //         width: 150px;
-    //         height: 50px;
-    //         display: grid;
-    //         place-items: center;
-    //         background-color: $primary-c;
-    //         border-radius: 12px;
-    //         a {
-    //           color: $body-c;
-    //           font-size: 1.2rem;
-    //           letter-spacing: 1px;
-    //         }
-    //       }
-    //     }
-    //   }
-
-    //   .btn {
-    //     margin-top: 2rem;
-    //     width: 100%;
-    //     button {
-    //       width: 150px;
-    //       height: 50px;
-    //       background-color: $primary-c;
-    //       border: none;
-    //       outline: none;
-    //       border-radius: 12px;
-    //       color: $body-c;
-    //       font-size: 1.2rem;
-    //       letter-spacing: 1px;
-    //       cursor: pointer;
-    //       transition: all 0.3s ease-in-out;
-    //       &:hover {
-    //         background-color: $title-c;
-    //       }
-    //     }
-    //   }
-    // }
-
-    aside {
-      width: 30%;
-      background-color: transparent;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
-      border-radius: 24px;
-      height: 570px;
-      padding: 1rem;
-      position: sticky;
-      top: 15px;
-
-      .title {
-        display: flex;
-        margin-bottom: 2rem;
-        position: relative;
-        justify-content: center;
-
-        &::before {
-          position: absolute;
-          content: "";
-          width: 100%;
-          height: 3px;
-          background-color: $title-c;
-          bottom: -8px;
-          left: 0;
-          border-radius: 12px;
-        }
-
-        h1 {
-          font-size: $med-fs;
-          letter-spacing: 1px;
-        }
-      }
-
-      .content {
+      article {
+        width: 70%;
         display: flex;
         flex-direction: column;
-        row-gap: 1rem;
-        margin-bottom: 1rem;
 
-        li {
-          cursor: pointer;
-          transition: all 0.3s ease-in-out;
+        .content {
+          display: grid;
+          grid-template-columns: repeat(1, 1fr);
+          row-gap: 2rem;
+          place-items: center;
 
-          &:hover {
-            a {
-              color: $primary-c;
-            }
-          }
-
-          &.active {
-            a {
-              color: $primary-c;
-              font-size: 1.15rem;
-            }
-          }
-
-          a {
-            font-size: 1rem;
-            letter-spacing: 1px;
-            color: $title-c;
-            text-transform: capitalize;
+          .box {
+            width: 100%;
+            height: auto;
+            background-color: transparent;
+            backdrop-filter: blur(10px);
+            border: 1px solid $title-c;
+            border-radius: 24px;
+            padding: 1rem;
+            transform: perspective(1000px) translateZ(0);
             transition: all 0.3s ease-in-out;
+
+            &.visible {
+              transform: perspective(1000px) translateZ(20px);
+            }
+
+            .title {
+              font-size: $med-fs;
+              margin-bottom: 1rem;
+              letter-spacing: 1px;
+            }
+
+            .date {
+              display: flex;
+              justify-content: space-between;
+              width: 100%;
+              align-items: center;
+              margin-bottom: 1rem;
+
+              div {
+                font-size: 1.2rem;
+                letter-spacing: 1px;
+              }
+
+              h3 {
+                font-size: 1.2rem;
+                letter-spacing: 1px;
+              }
+            }
+
+            p {
+              font-size: 1rem;
+              line-height: 1.5;
+              margin-bottom: 1rem;
+            }
+
+            .btn {
+              width: 180px;
+              height: 45px;
+              background-color: $primary-c;
+              color: $body-c;
+              border-radius: 12px;
+              display: grid;
+              place-items: center;
+              transition: all 0.3s ease-in-out;
+
+              a {
+                color: $body-c;
+                font-size: 1.2rem;
+                letter-spacing: 1px;
+              }
+            }
           }
         }
       }
 
-      .tutorial {
-        display: flex;
-        flex-direction: column;
+      aside {
+        width: 30%;
+        background-color: transparent;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+        border-radius: 24px;
+        height: 570px;
+        padding: 1rem;
+        position: sticky;
+        top: 15px;
 
-        .box {
+        .title {
+          display: flex;
+          margin-bottom: 2rem;
+          position: relative;
+          justify-content: center;
+
+          &::before {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 3px;
+            background-color: $title-c;
+            bottom: -8px;
+            left: 0;
+            border-radius: 12px;
+          }
+
+          h1 {
+            font-size: $med-fs;
+            letter-spacing: 1px;
+          }
+        }
+
+        .content {
+          display: flex;
+          flex-direction: column;
+          row-gap: 1rem;
+          margin-bottom: 1rem;
+
+          li {
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+              a {
+                color: $primary-c;
+              }
+            }
+
+            &.active {
+              a {
+                color: $primary-c;
+                font-size: 1.15rem;
+              }
+            }
+
+            a {
+              font-size: 1rem;
+              letter-spacing: 1px;
+              color: $title-c;
+              text-transform: capitalize;
+              transition: all 0.3s ease-in-out;
+            }
+          }
+        }
+
+        .tutorial {
           display: flex;
           flex-direction: column;
 
-          h4 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            position: relative;
+          .box {
+            display: flex;
+            flex-direction: column;
 
-            &::before {
-              position: absolute;
-              content: "";
+            h4 {
+              font-size: 1.3rem;
+              margin-bottom: 1rem;
+              position: relative;
+
+              &::before {
+                position: absolute;
+                content: "";
+                width: 100%;
+                height: 3px;
+                background-color: $title-c;
+                bottom: -8px;
+                left: 0;
+                border-radius: 12px;
+              }
+            }
+
+            iframe {
               width: 100%;
-              height: 3px;
-              background-color: $title-c;
-              bottom: -8px;
-              left: 0;
+              height: 100%;
               border-radius: 12px;
             }
           }
+        }
+      }
+    }
 
-          iframe {
-            width: 100%;
-            height: 100%;
-            border-radius: 12px;
+    .head {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 2rem;
+
+      h3 {
+        font-size: $normal-fs;
+        letter-spacing: 1px;
+        display: flex;
+
+        i {
+          font-size: $normal-fs;
+          margin-top: 0.2rem;
+        }
+      }
+
+      span {
+        font-size: $normal-fs;
+        letter-spacing: 1px;
+        margin-bottom: 0.3rem;
+      }
+    }
+
+    .btn {
+      width: 250px;
+      height: 60px;
+      background-color: $primary-c;
+      margin-bottom: 1rem;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        background-color: $title-c;
+      }
+
+      a {
+        color: $body-c;
+        font-size: $normal-fs;
+        letter-spacing: 1px;
+      }
+    }
+  }
+}
+
+.download {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .download__container {
+    padding: 1rem 5%;
+
+    .content {
+      .box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        img {
+          width: 500px;
+          height: 500px;
+          object-fit: cover;
+          margin-bottom: 1rem;
+        }
+
+        .text {
+          p {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+          }
+        }
+
+        .btn {
+          width: 250px;
+          height: 60px;
+          background-color: $primary-c;
+          display: grid;
+          place-items: center;
+          margin-top: 2rem;
+          border-radius: 12px;
+
+          a {
+            color: $body-c;
+            font-size: $med-fs;
+            letter-spacing: 1px;
           }
         }
       }

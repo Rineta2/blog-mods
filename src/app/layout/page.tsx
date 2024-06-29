@@ -38,6 +38,8 @@ const Layout = () => {
     }, 500);
   }, [visibleItems, filteredData]);
 
+  const uniqueCategories = Array.from(new Set(dataPage.map(data => data.category)));
+
   return (
     <section className="layout">
       <div className="layout__container container grid">
@@ -89,17 +91,13 @@ const Layout = () => {
           </div>
 
           <ul className="content">
-            {
-              dataPage.map((data) => {
-                return (
-                  <li key={data.id}>
-                    <Link href={`/[category]`} as={`/layout/${data.category}`}>
-                      <span>{data.category}</span>
-                    </Link>
-                  </li>
-                )
-              })
-            }
+            {uniqueCategories.map((category, index) => (
+              <li key={index}>
+                <Link href={`/[category]`} as={`/layout/${category}`}>
+                  <span>{category}</span>
+                </Link>
+              </li>
+            ))}
           </ul>
 
           <div className="tutorial">
