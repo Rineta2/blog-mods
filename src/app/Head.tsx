@@ -33,7 +33,7 @@ const Head: React.FC = () => {
   const jsonLdString = JSON.stringify(jsonLd);
 
   return (
-    <React.Fragment>
+    <>
       <title>{metadata.title}</title>
       <meta charSet="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -62,10 +62,10 @@ const Head: React.FC = () => {
         {`
         var atOptions = {
             'key' : '27e54543a309a306bcd155d138c3ddc3',
-        'format' : 'iframe',
-        'height' : 250,
-        'width' : 300,
-        'params' : { }
+            'format' : 'iframe',
+            'height' : 250,
+            'width' : 300,
+            'params' : { }
         };
         `}
       </script>
@@ -105,7 +105,7 @@ const Head: React.FC = () => {
         dangerouslySetInnerHTML={{ __html: jsonLdString }}
       />
 
-    </React.Fragment>
+    </>
   );
 };
 
