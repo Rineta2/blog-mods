@@ -44,6 +44,20 @@ const Head: React.FC = () => {
       <meta name="googlebot" content="index, follow" />
       <meta name="google-site-verification" content={metadata.verification} />
 
+      <script type="text/javascript">
+        {`
+        var atOptions = {
+          'key' : '27e54543a309a306bcd155d138c3ddc3',
+          'format' : 'iframe',
+          'height' : 250,
+          'width' : 300,
+          'params' : { }
+        };
+        `}
+      </script>
+
+      <script type="text/javascript" src="//www.topcreativeformat.com/27e54543a309a306bcd155d138c3ddc3/invoke.js" async></script>
+
       <Script
         id="gtm-script"
         strategy="beforeInteractive"
