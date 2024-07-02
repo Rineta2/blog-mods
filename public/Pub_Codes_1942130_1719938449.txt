@@ -1,0 +1,2 @@
+"zone name","placement name","placement id","code (direct link)"
+direct-link-1942130,DirectLink_1,23581079,https://www.highrevenuenetwork.com/uvxj6txzwn?key=fcb0c7e71e6afc5771eaf397bb92b224
