@@ -71,6 +71,8 @@ const Head: React.FC = () => {
       </script>
       <script type="text/javascript" src="//relishsinew.com/27e54543a309a306bcd155d138c3ddc3/invoke.js" async></script>
 
+      <script src="https://relishsinew.com/uvxj6txzwn?key=fcb0c7e71e6afc5771eaf397bb92b224" async></script>
+
       <Script
         id="gtm-script"
         strategy="beforeInteractive"
